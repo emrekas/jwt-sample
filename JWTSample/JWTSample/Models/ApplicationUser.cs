@@ -1,6 +1,7 @@
 ﻿namespace JWTSample.Models
 {
-    public class User
+    //Veritabanımız için ApplicationUser modelini oluşturduk.
+    public class ApplicationUser
     {
         public int Id { get; set; }
         public string FirstName { get; set; } = "unnamed";
