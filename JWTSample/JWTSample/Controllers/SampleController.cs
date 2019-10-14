@@ -1,4 +1,5 @@
-﻿using JWTSample.Services.User;
+﻿using JWTSample.Models;
+using JWTSample.Services.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,14 +19,14 @@ namespace JWTSample.Controllers
         //Burada da AllowAnonymous attribute nü kullanarak bu seferde bu metoda herkesin erişebileceğini söylüyorum.
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Authenticate([FromBody] string username, string password)
+        public IActionResult Authenticate([FromBody]AuthenticateModel authenticateModel)
         {
-            var user = _userService.Authenticate(username, password);
+            var user = _userService.Authenticate(authenticateModel.Username, authenticateModel.Password);
 
             if (user == null)
                 return BadRequest("Username or password incorrect!");
 
-            return Ok(user);
+            return Ok(new { Username = user.Value.username, Token = user.Value.token });
         }
 
         [HttpGet]
