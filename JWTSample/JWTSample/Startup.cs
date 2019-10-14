@@ -44,7 +44,7 @@ namespace JWTSample
                     //Gelen isteklerin sadece HTTPS yani SSL sertifikası olanları kabul etmesi(varsayılan true)
                     x.RequireHttpsMetadata = false;
                     //Eğer token onaylanmış ise sunucu tarafında kayıt edilir.
-                    x.SaveToken = false;
+                    x.SaveToken = true;
                     //Token içinde neleri kontrol edeceğimizin ayarları.
                     x.TokenValidationParameters = new TokenValidationParameters
                     {
