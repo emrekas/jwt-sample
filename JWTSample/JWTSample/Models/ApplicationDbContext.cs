@@ -12,6 +12,7 @@ namespace JWTSample.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlite("Data Source=jwtSample.db");
 
+        //Veritabanı oluşturulurken dummy data ile oluşturulmasını istiyorum.
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ApplicationUser>().HasData(new ApplicationUser

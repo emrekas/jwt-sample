@@ -2,6 +2,6 @@
 {
     public interface IUserService
     {
-        (string username, string token) Authenticate(string username, string password);
+        (string username, string token)? Authenticate(string username, string password);
     }
 }
