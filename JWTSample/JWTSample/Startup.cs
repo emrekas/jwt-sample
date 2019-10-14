@@ -52,11 +52,12 @@ namespace JWTSample
                         ValidateIssuerSigningKey = true,
                         //Neyle kontrol etmesi gerektigi
                         IssuerSigningKey = new SymmetricSecurityKey(key),
-                        //Bu iki ayar ise aud ve iss claimlerini kontrol edelim mi diye soruyor
+                        //Bu iki ayar ise "aud" ve "iss" claimlerini kontrol edelim mi diye soruyor
                         ValidateIssuer = false,
                         ValidateAudience = false
                     };
                 });
+            //DI için IUserService arayüzünü çağırdığım zaman UserService sınıfını getirmesini söylüyorum.
             services.AddScoped<IUserService, UserService>();
         }
 
