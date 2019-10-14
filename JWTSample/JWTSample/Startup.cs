@@ -1,4 +1,5 @@
 ﻿using JWTSample.Helpers;
+using JWTSample.Services.User;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using JWTSample.Models;
 
 namespace JWTSample
 {
@@ -21,7 +23,7 @@ namespace JWTSample
             //Atacağımız isteklerde CORS problemi yaşamamak için:
             services.AddCors();
             services.AddControllers();
-
+            services.AddDbContext<ApplicationDbContext>();
             // appsettings.json içinde oluşturduğumuz gizli anahtarımızı AppSettings ile çağıracağımızı söylüyoruz.
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
@@ -55,6 +57,7 @@ namespace JWTSample
                         ValidateAudience = false
                     };
                 });
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
