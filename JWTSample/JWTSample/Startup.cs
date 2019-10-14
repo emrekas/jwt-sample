@@ -1,4 +1,5 @@
 ﻿using JWTSample.Helpers;
+using JWTSample.Models;
 using JWTSample.Services.User;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -8,7 +9,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using JWTSample.Models;
 
 namespace JWTSample
 {

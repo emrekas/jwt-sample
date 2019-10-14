@@ -29,9 +29,6 @@ namespace JWTSample.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetSummaries()
-        {
-            return Ok(Summaries);
-        }
+        public IActionResult GetSummaries() => Ok(Summaries);
     }
 }
