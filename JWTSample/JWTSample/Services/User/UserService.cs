@@ -1,5 +1,5 @@
 ﻿using JWTSample.Helpers;
-using JWTSample.Models;
+using JWTSample.Entities;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;

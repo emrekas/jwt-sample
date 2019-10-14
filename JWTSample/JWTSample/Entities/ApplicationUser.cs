@@ -1,4 +1,4 @@
-﻿namespace JWTSample.Models
+﻿namespace JWTSample.Entities
 {
     //Veritabanımız için ApplicationUser modelini oluşturduk.
     public class ApplicationUser

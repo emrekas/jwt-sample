@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace JWTSample.Models
+namespace JWTSample.Entities
 {
     //DbContext sınıfından kalıtım alarak bunun bir context olacağını belirtiyorum.
     public class ApplicationDbContext : DbContext
