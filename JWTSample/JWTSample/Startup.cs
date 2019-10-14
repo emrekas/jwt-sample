@@ -1,5 +1,5 @@
-﻿using JWTSample.Helpers;
-using JWTSample.Entities;
+﻿using JWTSample.Entities;
+using JWTSample.Helpers;
 using JWTSample.Services.User;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -23,6 +23,7 @@ namespace JWTSample
             //Atacağımız isteklerde CORS problemi yaşamamak için:
             services.AddCors();
             services.AddControllers();
+            //Projemizde DbContext olarak ApplicationDbContext kullanacağımız belirtliyoruz.
             services.AddDbContext<ApplicationDbContext>();
             // appsettings.json içinde oluşturduğumuz gizli anahtarımızı AppSettings ile çağıracağımızı söylüyoruz.
             var appSettingsSection = Configuration.GetSection("AppSettings");
